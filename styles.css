@@ -33,23 +33,33 @@ a { color: inherit; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 4.5vw;
+  padding: 1rem 2.2vw 1rem 4vw;
   background: linear-gradient(to bottom, rgba(2, 5, 10, 0.9), rgba(2, 5, 10, 0.2));
   backdrop-filter: blur(6px);
 }
 
 .brand {
   text-decoration: none;
-  color: var(--gold-soft);
-  letter-spacing: 0.15rem;
-  font-size: 1.1rem;
+  font-family: "Snell Roundhand", "Apple Chancery", "Zapfino", "STKaiti", cursive;
+  letter-spacing: 0.05rem;
+  font-size: 2.05rem;
+  font-weight: 500;
+  background: linear-gradient(180deg, #f4e4bd 0%, #e8cb8d 28%, #ba8b42 55%, #f1d6a0 78%, #8d642d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(228, 189, 119, 0.22), 0 1px 0 rgba(95, 62, 20, 0.7);
 }
+
 
 .main-nav {
   display: flex;
-  gap: 1rem;
+  gap: 0.58rem;
   align-items: flex-start;
+  margin-left: auto;
+  transform: translateX(10px);
 }
+
 
 .menu-item {
   position: relative;
@@ -59,15 +69,21 @@ a { color: inherit; }
 .menu-item > a {
   display: inline-block;
   text-decoration: none;
-  color: #d4d9e5;
-  font-size: 2rem;
-  padding: 0.35rem 0.4rem;
+  font-size: 1.38rem;
+  padding: 0.28rem 0.34rem;
+  background: linear-gradient(180deg, #f2dfb4 0%, #ddb975 38%, #9e7333 65%, #f0d8a1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 8px rgba(212, 169, 96, 0.22);
 }
+
 
 .menu-item.active > a,
 .menu-item:hover > a {
-  color: var(--gold-soft);
+  filter: brightness(1.14);
 }
+
 
 .submenu {
   position: absolute;
@@ -358,11 +374,12 @@ small {
 
 @media (max-width: 980px) {
   .main-nav {
-    gap: 0.4rem;
+    gap: 0.2rem;
+    transform: none;
   }
 
   .menu-item > a {
-    font-size: 1.35rem;
+    font-size: 1.02rem;
   }
 
   .product-grid {
