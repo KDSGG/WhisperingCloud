@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+    />
+    <title>成衣定制与支付 | 香云纱</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="subpage">
+    <header class="topbar">
+      <a class="brand" href="index.html">香云纱</a>
+      <nav>
+        <a href="index.html#grades">继续看面料</a>
+      </nav>
+    </header>
+
+    <main class="tailor-layout">
+      <section class="order-panel">
+        <h1>成衣定制</h1>
+        <p>选择面料等级与版型后，下单支付。默认演示为模拟支付，可切换真实网关接口。</p>
+
+        <form id="order-form" novalidate>
+          <label>
+            面料等级
+            <select id="grade" name="grade" required>
+              <option value="premium">上品 · 藏曜</option>
+              <option value="standard">中品 · 玄衡</option>
+              <option value="entry">下品 · 朴序</option>
+            </select>
+          </label>
+
+          <label>
+            成衣版型
+            <select id="style" name="style" required>
+              <option value="coat">长款外套</option>
+              <option value="shirt">立领衬衫</option>
+              <option value="dress">连衣裙</option>
+            </select>
+          </label>
+
+          <label>
+            尺码
+            <select id="size" name="size" required>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+          </label>
+
+          <label>
+            收件邮箱
+            <input id="email" name="email" type="email" placeholder="name@example.com" required />
+          </label>
+
+          <label>
+            收货地址
+            <textarea id="address" name="address" rows="3" minlength="8" required></textarea>
+          </label>
+
+          <div class="price-row">
+            <span>预计价格</span>
+            <strong id="price">¥0</strong>
+          </div>
+
+          <button class="btn primary" type="submit">立即支付</button>
+          <p id="form-msg" class="form-msg" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <aside class="security-panel">
+        <h2>支付与安全</h2>
+        <ul>
+          <li>支付模式：`SIMULATION`（演示）/ `GATEWAY`（生产）</li>
+          <li>建议接入：Stripe / 支付宝国际 / 微信支付服务商</li>
+          <li>服务端签名校验、防重放 nonce、Webhook 二次验签</li>
+          <li>敏感信息最小化存储，订单与用户数据分级访问</li>
+          <li>启用 HTTPS、CSP、XSS 输入校验与限流</li>
+        </ul>
+        <a class="btn ghost" href="security-checklist.md">查看安全清单</a>
+      </aside>
+    </main>
+
+    <script src="tailor.js"></script>
+  </body>
+</html>
